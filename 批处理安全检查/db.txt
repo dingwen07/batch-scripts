@@ -1,0 +1,9 @@
+format
+del
+copy
+attrib
+taskkill
+ntsd
+bcdboot
+dism
+cipher

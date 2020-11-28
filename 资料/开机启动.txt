@@ -1,0 +1,2 @@
+copy a.bat c:/
+reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ /v test /d """c:/a.bat""" /f

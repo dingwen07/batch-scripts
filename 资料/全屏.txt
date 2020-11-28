@@ -1,0 +1,12 @@
+::ø™Õ∑£∫
+@echo off
+reg query HKCU\Console\%%SystemRoot%%_system32_cmd.exe /v FullScreen>nul 2>nul
+if errorlevel 1 (
+reg add HKCU\Console\%%SystemRoot%%_system32_cmd.exe /v FullScreen /t REG_DWORD /d
+ 1 /f
+start cmd /c 
+%0
+exit
+)
+::Ω·Œ≤£∫
+reg delete HKCU\Console\%%SystemRoot%%_system32_cmd.exe /v FullScreen /f

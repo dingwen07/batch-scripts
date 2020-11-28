@@ -1,0 +1,24 @@
+15158  2017/01/24 周二  9:00:32.69
+
+\\DESKTOP-4IEJHQB 的用户帐户
+
+-------------------------------------------------------------------------------
+15158                    admin                    Administrator            
+DefaultAccount           defaultuser0             Guest                    
+wangxuwei                
+命令成功完成。
+
+
+
+15158  2017/01/24 周二  8:59:59.62
+
+\\DESKTOP-4IEJHQB 的用户帐户
+
+-------------------------------------------------------------------------------
+15158                    admin                    Administrator            
+DefaultAccount           defaultuser0             Guest                    
+wangxuwei                
+命令成功完成。
+
+
+
