@@ -13,15 +13,13 @@ FOR /F "tokens=1,2 delims=/ " %%i in ("%2") do set yeardate="%%i-%%j"
 set y=%date:~0,4%
 set /a m=%date:~5,2%
 set cym="%y%-%m%"
-
 IF %yeardate%==%cym% exit
 
 IF NOT EXIST .\%AF% MKDIR %AF%
 IF NOT EXIST .\%AF%\%yeardate% MKDIR %AF%\%yeardate%
 
 echo %fn:"=%
-MOVE /-Y %1 .\%AF%\%yeardate%\%1>NUL
-
+MOVE /-Y %1 .\%AF%\%yeardate%\%1
 
 exit
 
