@@ -5,7 +5,7 @@ set AF="Archive"
 if [%1]==[] goto run
 
 set fn=%1
-IF [%fn:"=%]==[%~n0%~x0] exit
+IF ["%fn:"=%"]==["%~n0%~x0"] exit
 IF [%1]==[%AF%] exit
 
 FOR /F "tokens=1,2 delims=/ " %%i in ("%2") do set yeardate="%%i-%%j"
