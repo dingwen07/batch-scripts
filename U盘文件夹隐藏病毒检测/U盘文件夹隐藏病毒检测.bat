@@ -9,11 +9,11 @@ set rdm=_%y%_%m%_%d%_%h%_%mi%_%s%
 for /f "delims=" %%a in ('dir /a /b *.exe') do echo;%%~na>>exe%rdm%.txt
 dir /ad /b>folder%rdm%.txt
 set sum=0
-for /f  %%a in (exe%rdm%.txt) do (
-findstr "%%a" "folder%rdm%.txt"&&(set /A sum=sum+1&echo."%%a".exe>>detect%rdm%.txt)||echo NOT FOUND
+for /f "usebackq tokens=*" %%a in (exe%rdm%.txt) do (
+    findstr "%%a" "folder%rdm%.txt"&&(set /A sum=sum+1&echo %%a.exe>>detect%rdm%.txt)||echo NOT FOUND
 )
 cls
-if exist "System Volume Information.exe" echo 怀疑该U盘有病毒!&goto clean
+if exist "System Volume Information.exe" echo 严重怀疑该U盘有病毒!&goto clean
 if %sum% GEQ 2 goto detected
 echo 没有检测到U盘文件夹隐藏病毒
 echo.>exe%rdm%.txt
@@ -45,6 +45,8 @@ move "System Volume Information.exe " protected%rdm%\
 echo %date% %time%>protected%rdm%\time%rdm%.txt
 echo @echo off>>view%rdm%.bat
 echo explorer.exe protected%rdm%>>view%rdm%.bat
+echo explorer.exe protected%rdm%>>view%rdm%.bat
+echo EXIT 0 >>view%rdm%.bat
 cls
 echo 已移动这些病毒到安全的位置，如果需要查看，请运行view%rdm%.bat
 pause
