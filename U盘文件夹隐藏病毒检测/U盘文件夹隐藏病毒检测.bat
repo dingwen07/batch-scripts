@@ -6,7 +6,7 @@ set h=%time:~0,2%
 set mi=%time:~3,2%
 set s=%time:~6,2%
 set rdm=_%y%_%m%_%d%_%h%_%mi%_%s%
-for /f "delims=" %%a in ('dir /a /b *.exe') do echo;%%~na>>exe%rdm%.txt
+for /f "delims=" %%a in ('DIR /A:-D /B *.EXE') do echo;%%~na>>exe%rdm%.txt
 dir /ad /b>folder%rdm%.txt
 set sum=0
 for /f "usebackq tokens=*" %%a in (exe%rdm%.txt) do (
@@ -14,15 +14,16 @@ for /f "usebackq tokens=*" %%a in (exe%rdm%.txt) do (
 )
 cls
 if exist "System Volume Information.exe" echo 严重怀疑该U盘有病毒!&goto clean
-if %sum% GEQ 2 goto detected
+if %sum% GEQ 1 goto detected
 echo 没有检测到U盘文件夹隐藏病毒
+pause
 echo.>exe%rdm%.txt
 echo.>folder%rdm%.txt
 echo.>detect%rdm%.txt
 del exe%rdm%.txt>nul
 del folder%rdm%.txt>nul
 del detect%rdm%.txt>nul
-pause
+
 exit
 :detected
 echo 检测到U盘文件夹隐藏病毒!
@@ -36,15 +37,14 @@ echo 按任意键移动这些EXE文件
 pause>nul
 mkdir protected%rdm%
 attrib +s +h protected%rdm%
-for /f %%a in (folder%rdm%.txt) do attrib -s -h %%a
-for /f %%a in (folder%rdm%.txt) do move %%a.exe protected%rdm%\
+for /f "usebackq tokens=*" %%a in (folder%rdm%.txt) do attrib -s -h %%a
+for /f "usebackq tokens=*" %%a in (folder%rdm%.txt) do move "%%a.exe" protected%rdm%\
 move exe%rdm%.txt protected%rdm%\
 move folder%rdm%.txt protected%rdm%\
 move detect%rdm%.txt protected%rdm%\
 move "System Volume Information.exe " protected%rdm%\
 echo %date% %time%>protected%rdm%\time%rdm%.txt
 echo @echo off>>view%rdm%.bat
-echo explorer.exe protected%rdm%>>view%rdm%.bat
 echo explorer.exe protected%rdm%>>view%rdm%.bat
 echo EXIT 0 >>view%rdm%.bat
 cls
