@@ -11,11 +11,13 @@ IF ["%fn:"=%"]==["%~n0%~x0"] EXIT
 IF [%1]==[%AF%] EXIT
 
 FOR /F "tokens=1,2 delims=/ " %%i in ("%2") do (
-    SET year="%%i"
-    SET month="%%j"
+    SET year=%%i
+    SET month=%%j
 )
 IF %month% LEQ 9 SET month=0%month%
 SET yeardate="%year%-%month%"
+
+:: ECHO %yeardate%
 
 IF NOT EXIST .\%AF% MKDIR %AF%
 IF NOT EXIST .\%AF%\%yeardate% MKDIR %AF%\%yeardate%
